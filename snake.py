@@ -30,6 +30,11 @@ class Snake():
         """ Extend the Snake Tail as the snake eats food"""
         self.add_segment(self.segments[-1].position())
 
+    def reset(self):
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
+
     def move(self):
         for seg_num in range(len(self.segments) - 1, 0, -1):
             new_x = self.segments[seg_num - 1].xcor()
